@@ -1,11 +1,11 @@
-package com.example.test_app3.ui.login
+package com.example.test_app3.loginFlow.login
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import android.util.Patterns
-import com.example.test_app3.data.LoginRepository
-import com.example.test_app3.data.Result
+import com.example.test_app3.loginFlow.data.LoginRepository
+import com.example.test_app3.loginFlow.data.Result
 
 import com.example.test_app3.R
 

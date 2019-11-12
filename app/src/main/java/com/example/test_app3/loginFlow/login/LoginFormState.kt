@@ -1,4 +1,4 @@
-package com.example.test_app3.ui.login
+package com.example.test_app3.loginFlow.login
 
 /**
  * Data validation state of the login form.

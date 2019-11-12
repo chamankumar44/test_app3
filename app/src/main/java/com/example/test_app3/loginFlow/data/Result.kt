@@ -1,4 +1,4 @@
-package com.example.test_app3.data
+package com.example.test_app3.loginFlow.data
 
 /**
  * A generic class that holds a value with its loading status.

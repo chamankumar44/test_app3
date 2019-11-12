@@ -1,6 +1,6 @@
-package com.example.test_app3.data
+package com.example.test_app3.loginFlow.data
 
-import com.example.test_app3.data.model.LoggedInUser
+import com.example.test_app3.loginFlow.data.model.LoggedInUser
 import java.io.IOException
 
 /**

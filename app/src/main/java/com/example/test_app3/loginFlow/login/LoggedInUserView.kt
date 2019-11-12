@@ -1,4 +1,4 @@
-package com.example.test_app3.ui.login
+package com.example.test_app3.loginFlow.login
 
 /**
  * User details post authentication that is exposed to the UI

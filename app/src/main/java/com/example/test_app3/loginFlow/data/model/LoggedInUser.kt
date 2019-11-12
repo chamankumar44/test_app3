@@ -1,4 +1,4 @@
-package com.example.test_app3.data.model
+package com.example.test_app3.loginFlow.data.model
 
 /**
  * Data class that captures user information for logged in users retrieved from LoginRepository
