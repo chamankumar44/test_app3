@@ -1,17 +1,17 @@
 package com.example.test_app3.splash
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.view.View
+import com.example.test_app3.BaseActivity
 import com.example.test_app3.R
+import com.example.test_app3.loginFlow.login.LoginActivity
 import kotlinx.android.synthetic.main.activity_splash.*
 
-/**
- * An example full-screen activity that shows and hides the system UI (i.e.
- * status bar and navigation/system bar) with user interaction.
- */
-class SplashActivity : AppCompatActivity() {
+
+class SplashActivity : BaseActivity() {
     private val mHideHandler = Handler()
     private val mHidePart2Runnable = Runnable {
         // Delayed removal of status and navigation bar
@@ -61,8 +61,23 @@ class SplashActivity : AppCompatActivity() {
         // operations to prevent the jarring behavior of controls going away
         // while interacting with the UI.
         dummy_button.setOnTouchListener(mDelayHideTouchListener)
+
+        SwitchToNextPage()
     }
 
+    fun SwitchToNextPage() {
+
+        mHideHandler.postDelayed(Runnable {
+            OpenNextPage()
+        },5000)
+
+    }
+
+
+    fun OpenNextPage(){
+        val intent = Intent(this, LoginActivity::class.java)
+        startActivity(intent)
+    }
     override fun onPostCreate(savedInstanceState: Bundle?) {
         super.onPostCreate(savedInstanceState)
 
