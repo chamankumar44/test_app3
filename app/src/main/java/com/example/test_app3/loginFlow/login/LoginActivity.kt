@@ -1,6 +1,7 @@
 package com.example.test_app3.loginFlow.login
 
 import android.app.Activity
+import android.content.Intent
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
@@ -16,6 +17,7 @@ import android.widget.ProgressBar
 import android.widget.Toast
 
 import com.example.test_app3.R
+import com.example.test_app3.home.HomeActivity
 
 class LoginActivity : AppCompatActivity() {
 
@@ -56,9 +58,17 @@ class LoginActivity : AppCompatActivity() {
                 showLoginFailed(loginResult.error)
             }
             if (loginResult.success != null) {
-                updateUiWithUser(loginResult.success)
+
+                val intent = Intent(this, HomeActivity::class.java)
+                startActivity(intent)
+                finish()
+
+
+             //   startActivity(Intent(this,HomeActivity::class.java))
+
+          //      updateUiWithUser(loginResult.success)
             }
-            setResult(Activity.RESULT_OK)
+//            setResult(Activity.RESULT_OK)
 
             //Complete and destroy login activity once successful
             finish()
@@ -98,6 +108,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun updateUiWithUser(model: LoggedInUserView) {
+
         val welcome = getString(R.string.welcome)
         val displayName = model.displayName
         // TODO : initiate successful logged in experience
