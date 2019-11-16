@@ -8,7 +8,8 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import com.example.test_app3.home.R
+import com.example.test_app3.R
+
 
 /**
  * A placeholder fragment containing a simple view.

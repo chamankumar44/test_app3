@@ -8,6 +8,7 @@ import androidx.viewpager.widget.ViewPager
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import com.example.test_app3.R
 import com.example.test_app3.home.ui.main.SectionsPagerAdapter
 
 class HomeActivity : AppCompatActivity() {
