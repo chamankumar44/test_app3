@@ -17,7 +17,8 @@ import android.widget.ProgressBar
 import android.widget.Toast
 
 import com.example.test_app3.R
-import com.example.test_app3.home.HomeActivity
+import com.example.test_app3.home.DrawerActivity
+
 
 class LoginActivity : AppCompatActivity() {
 
@@ -59,9 +60,9 @@ class LoginActivity : AppCompatActivity() {
             }
             if (loginResult.success != null) {
 
-                val intent = Intent(this, HomeActivity::class.java)
+                val intent = Intent(this, DrawerActivity::class.java)
                 startActivity(intent)
-                finish()
+//                finish()
 
 
              //   startActivity(Intent(this,HomeActivity::class.java))
