@@ -13,7 +13,9 @@ import com.google.android.material.navigation.NavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import android.view.Menu
+import android.widget.TextView
 import com.example.test_app3.R
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class DrawerActivity : AppCompatActivity() {
 
@@ -43,6 +45,7 @@ class DrawerActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+//        addBottomNavigation()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -54,5 +57,37 @@ class DrawerActivity : AppCompatActivity() {
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
+    }
+
+
+
+
+    //*****************************Add navigation ******************************************//
+
+    private lateinit var textMessage: TextView
+    private val onNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
+        when (item.itemId) {
+            R.id.navigation_home -> {
+                textMessage.setText(R.string.title_home)
+                return@OnNavigationItemSelectedListener true
+            }
+            R.id.navigation_dashboard -> {
+                textMessage.setText(R.string.title_dashboard)
+                return@OnNavigationItemSelectedListener true
+            }
+            R.id.navigation_notifications -> {
+                textMessage.setText(R.string.title_notifications)
+                return@OnNavigationItemSelectedListener true
+            }
+        }
+        false
+    }
+
+    fun addBottomNavigation(){
+
+        val navView: BottomNavigationView = findViewById(R.id.nav_view_bottom)
+
+        textMessage = findViewById(R.id.message)
+        navView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
     }
 }
